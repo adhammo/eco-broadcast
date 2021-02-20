@@ -1,0 +1,72 @@
+{
+  "name": "broadcast",
+  "productName": "broadcast",
+  "version": "1.0.0",
+  "description": "Broadcast sensors information",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "install": "electron-rebuild",
+    "lint": "echo \"No linting configured\""
+  },
+  "keywords": [],
+  "author": {
+    "name": "adham mohamed heli",
+    "email": "adhamacc1@gmail.com"
+  },
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "public/icon.ico"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "broadcast"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "mqtt": "^4.2.6",
+    "serialport": "^9.0.6"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.54",
+    "@electron-forge/maker-deb": "^6.0.0-beta.54",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
+    "@electron-forge/maker-zip": "^6.0.0-beta.54",
+    "@types/dotenv": "^8.2.0",
+    "@types/mqtt": "^2.5.0",
+    "@types/node": "^14.14.28",
+    "@types/serialport": "^8.0.1",
+    "electron": "11.2.3",
+    "electron-rebuild": "^2.3.5",
+    "tslint": "^6.1.3",
+    "typescript": "^4.1.5"
+  }
+}
